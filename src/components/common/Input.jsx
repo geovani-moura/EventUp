@@ -9,8 +9,12 @@ const Input = ({
   error,
   placeholder,
   required = false,
+  readOnly = false,
   ...props
 }) => {
+  // Se readOnly for true, usa form-control-plaintext
+  const controlClass = readOnly ? "Disabled" : "";
+
   return (
     <Form.Group className="mb-3" controlId={name}>
       {label && (
@@ -26,6 +30,9 @@ const Input = ({
         onChange={onChange}
         placeholder={placeholder}
         required={required}
+        readOnly={readOnly}
+        disabled={readOnly}
+        className={controlClass}
         isInvalid={!!error}
         {...props}
       />
