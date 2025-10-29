@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "React Conf Brasil",
+    "date": "2025-11-15",
+    "location": "São Paulo - SP",
+    "description": "Evento voltado para desenvolvedores React e entusiastas do ecossistema.",
+    "image": "https://picsum.photos/200/300?random=1",
+    "ownerId": 1
+  },
+  {
+    "id": 2,
+    "title": "Workshop UX/UI Design",
+    "date": "2025-12-02",
+    "location": "Rio de Janeiro - RJ",
+    "description": "Workshop prático sobre design de interfaces e experiência do usuário.",
+    "image": "https://picsum.photos/200/300?random=2",
+    "ownerId": 2
+  }
+]

@@ -416,3 +416,94 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Node modules e pacotes do npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output do React/Node
+build/
+dist/
+out/
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Diretórios temporários e caches
+.cache/
+.next/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+.tmp/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.tlog
+*.tsbuildinfo
+
+# Testes e cobertura
+coverage/
+*.lcov
+*.nyc_output/
+
+# Arquivos de lock que podem ser regenerados
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Outros arquivos de sistema e IDE
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Pastas de build do Visual Studio
+bin/
+obj/
+*.user
+*.suo
+*.rsuser
+*.userosscache
+*.sln.docstates
+*.vs/
+*.cache
+*.vscode-test/
+
+# Arquivos temporários de compilação
+*.tmp
+*.temp
+*.swp
+*.bak
+*.old
+*.orig
+*.rej
+
+# Cobertura e relatórios de teste
+*.coverage
+*.coveragexml
+*.trx
+TestResult.xml
+nunit-*.xml
+coverage*.json
+coverage*.xml
+coverage*.info
+
+# Pacotes NuGet e outros
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/

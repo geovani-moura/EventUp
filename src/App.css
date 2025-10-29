@@ -1,0 +1,43 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+/* Cor de fundo da página */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8; /* fundo suave */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.container {
+  padding: 2rem;
+}
+
+/* Seções com destaque */
+.hero {
+  background-color: #007bff; /* azul vivo */
+  color: #fff;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.featured-events {
+  background-color: #e9ecef; /* cinza claro */
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Cards com sombra leve */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.min-vh-75 {
+  min-height: 75vh !important;
+}
