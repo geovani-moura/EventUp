@@ -9,9 +9,11 @@ const Textarea = ({
   placeholder = "",
   error,
   required = false,
+  readOnly = false,
   className = "",
   ...props
 }) => {
+  const controlClass = readOnly ? "Disabled" : "";
   return (
     <Form.Group className={`mb-3 ${className}`} controlId={name}>
       {label && (
@@ -28,6 +30,9 @@ const Textarea = ({
         rows={rows}
         placeholder={placeholder}
         required={required}
+        readOnly={readOnly}
+        disabled={readOnly}
+        className={controlClass}
         isInvalid={!!error}
         {...props}
       />

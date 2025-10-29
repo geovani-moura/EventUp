@@ -1,7 +1,22 @@
 import { useState } from "react";
-import { Container, Form, Input, Button, Textarea } from "../../components/common";
+import { useNavigate } from "react-router-dom";
+import {
+  Container,
+  Form,
+  Input,
+  Button,
+  Textarea,
+} from "../../components/common";
 
-const EventForm = ({ initialData = {}, onSubmit, loading = false }) => {
+const EventForm = ({
+  initialData = {},
+  onSubmit,
+  loading = false,
+  readOnly = false,
+  submitLabel = "Salvar",
+}) => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     id: initialData.id,
     title: initialData.title || "",
@@ -12,13 +27,14 @@ const EventForm = ({ initialData = {}, onSubmit, loading = false }) => {
   });
 
   const handleChange = (e) => {
+    if (readOnly) return;
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+    if (!readOnly) onSubmit(formData);
   };
 
   return (
@@ -30,6 +46,7 @@ const EventForm = ({ initialData = {}, onSubmit, loading = false }) => {
           value={formData.title}
           onChange={handleChange}
           required
+          readOnly={readOnly}
         />
 
         <Input
@@ -39,6 +56,7 @@ const EventForm = ({ initialData = {}, onSubmit, loading = false }) => {
           value={formData.date}
           onChange={handleChange}
           required
+          readOnly={readOnly}
         />
 
         <Input
@@ -47,6 +65,7 @@ const EventForm = ({ initialData = {}, onSubmit, loading = false }) => {
           value={formData.location}
           onChange={handleChange}
           required
+          readOnly={readOnly}
         />
 
         <Textarea
@@ -57,6 +76,7 @@ const EventForm = ({ initialData = {}, onSubmit, loading = false }) => {
           placeholder="Descreva seu evento..."
           rows={5}
           required
+          readOnly={readOnly}
         />
 
         <Input
@@ -65,12 +85,19 @@ const EventForm = ({ initialData = {}, onSubmit, loading = false }) => {
           value={formData.image}
           onChange={handleChange}
           placeholder="https://exemplo.com/imagem.jpg"
+          readOnly={readOnly}
         />
 
-        <div className="text-end mt-3">
-          <Button type="submit" variant="primary" disabled={loading}>
-            {loading ? "Salvando..." : "Salvar"}
+        {/* Botões Salvar e Voltar lado a lado */}
+        <div className="d-flex justify-content-end mt-3 gap-2">
+          <Button variant="outline-secondary" onClick={() => navigate(-1)}>
+            ← Voltar
           </Button>
+          {!readOnly && (
+            <Button type="submit" variant="primary" disabled={loading}>
+              {loading ? "Salvando..." : submitLabel}
+            </Button>
+          )}
         </div>
       </Form>
     </Container>
