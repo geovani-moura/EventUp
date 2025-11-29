@@ -1,5 +1,5 @@
 // src/services/api.js
-const BASE_URL = "https://6902aedbb208b24affe6cfca.mockapi.io";
+export const BASE_URL = "https://6902aedbb208b24affe6cfca.mockapi.io";
 
 export const fetchJson = async (path, options = {}) => {
   const response = await fetch(`${BASE_URL}${path}`, {
